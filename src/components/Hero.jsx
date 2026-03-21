@@ -55,7 +55,9 @@ export default function Hero() {
               className="inline-flex w-fit max-w-full items-center gap-2 px-3 py-1.5 rounded-lg
               bg-dark-elevated border border-primary/30 overflow-hidden"
             >
-              <span className="typing-text font-mono text-xs sm:text-sm text-primary whitespace-nowrap">&lt; Fullstack Developer /&gt;</span>
+              <span className="typing-text font-mono text-xs sm:text-sm text-primary whitespace-nowrap">
+                &lt; Fullstack Developer /&gt;
+              </span>
             </div>
 
             {/* H1 */}
