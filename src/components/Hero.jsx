@@ -40,7 +40,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center overflow-hidden bg-dark">
       {/* Background radial glow */}
       <div
-        className="absolute top-0 right-0 w-[600px] h-[600px] pointer-events-none"
+        className="absolute top-0 right-0 w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] pointer-events-none"
         style={{
           background: "radial-gradient(circle at 80% 20%, rgba(37,99,235,0.08) 0%, transparent 65%)",
         }}
@@ -52,16 +52,16 @@ export default function Hero() {
           <div className="flex flex-col gap-7">
             {/* Badge */}
             <div
-              className="inline-flex w-fit items-center gap-2 px-3 py-1.5 rounded-lg
-              bg-dark-elevated border border-primary/30"
+              className="inline-flex w-fit max-w-full items-center gap-2 px-3 py-1.5 rounded-lg
+              bg-dark-elevated border border-primary/30 overflow-hidden"
             >
-              <span className="typing-text font-mono text-sm text-primary">&lt; Fullstack Developer /&gt;</span>
+              <span className="typing-text font-mono text-xs sm:text-sm text-primary whitespace-nowrap">&lt; Fullstack Developer /&gt;</span>
             </div>
 
             {/* H1 */}
             <div className="reveal visible">
               <h1
-                className="font-display font-bold text-5xl md:text-6xl lg:text-[64px] leading-tight
+                className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[64px] leading-tight
                 text-[#F0F0F0] tracking-tight"
               >
                 Wylham

@@ -73,7 +73,7 @@ export default function Contact() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="reveal group flex flex-col items-center gap-4 p-6 md:p-8
+              className="reveal group flex flex-col items-center gap-3 p-4 sm:p-6 md:p-8
                 bg-dark-elevated border rounded-xl transition-all duration-300
                 hover:border-primary/40 hover:shadow-glow-blue hover:-translate-y-1"
               style={{ borderColor: "rgba(255,255,255,0.07)" }}
