@@ -18,14 +18,18 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-24 py-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
-          <span className="font-display font-bold text-xl text-[#F0F0F0] tracking-tight select-none">
-            dev<span className="text-primary">.</span>
-          </span>
+          <a href="#" className="flex items-center select-none">
+            <img
+              src="/logos/LogoWhiteWDEV.webp"
+              alt="WDEV Logo"
+              className="h-6 w-auto opacity-90 hover:opacity-100 transition-opacity"
+            />
+          </a>
 
           {/* Tagline */}
           <p className="font-mono text-sm text-[#6B7280] text-center">
             Feito com café e TypeScript.{" "}
-            <span className="text-[#F0F0F0]/30">© 2025 Wylham Rodrigues. Todos os direitos reservados.</span>
+            <span className="text-[#F0F0F0]/30">© 2026 Wylham Lima. Todos os direitos reservados.</span>
           </p>
 
           {/* Social icons */}

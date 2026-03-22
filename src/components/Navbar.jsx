@@ -51,9 +51,9 @@ export default function Navbar() {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          className="font-display font-bold text-xl text-[#F0F0F0] tracking-tight select-none"
+          className="flex items-center select-none"
         >
-          dev<span className="text-primary">.</span>
+          <img src="/logos/LogoWhiteWDEV.webp" alt="WDEV Logo" className="h-6 w-auto" />
         </a>
 
         {/* Desktop links */}
