@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { CaretDownIcon } from "@phosphor-icons/react/dist/csr/CaretDown";
 
 import { useLanguage } from "../i18n/useLanguage";
 
@@ -144,7 +144,7 @@ export default function Hero() {
             className="text-[#6B7280] hover:text-primary transition-colors animate-bounce-slow"
             aria-label={hero.scrollAria}
           >
-            <ChevronDown size={20} />
+            <CaretDownIcon size={20} weight="bold" />
           </button>
         </div>
       </div>

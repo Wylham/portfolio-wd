@@ -1,30 +1,33 @@
 import { useEffect, useRef } from "react";
-import { Linkedin, Github, Instagram, MessageCircle } from "lucide-react";
+import { GithubLogoIcon } from "@phosphor-icons/react/dist/csr/GithubLogo";
+import { InstagramLogoIcon } from "@phosphor-icons/react/dist/csr/InstagramLogo";
+import { LinkedinLogoIcon } from "@phosphor-icons/react/dist/csr/LinkedinLogo";
+import { WhatsappLogoIcon } from "@phosphor-icons/react/dist/csr/WhatsappLogo";
 
 import { useLanguage } from "../i18n/useLanguage";
 
 const contacts = [
   {
     label: "LinkedIn",
-    icon: Linkedin,
+    icon: LinkedinLogoIcon,
     href: "https://linkedin.com/in/username",
     hint: "/in/username",
   },
   {
     label: "GitHub",
-    icon: Github,
+    icon: GithubLogoIcon,
     href: "https://github.com/username",
     hint: "@username",
   },
   {
     label: "Instagram",
-    icon: Instagram,
+    icon: InstagramLogoIcon,
     href: "https://instagram.com/username",
     hint: "@username",
   },
   {
     label: "WhatsApp",
-    icon: MessageCircle,
+    icon: WhatsappLogoIcon,
     href: "https://wa.me/5500000000000",
     hint: "+55 (00) 00000-0000",
   },
@@ -90,6 +93,7 @@ export default function Contact() {
                 >
                   <ContactIcon
                     size={22}
+                    weight={contactItem.label === "GitHub" ? "fill" : "regular"}
                     className="text-[#6B7280] group-hover:text-[#F0F0F0] transition-colors duration-300"
                   />
                 </div>

@@ -1,11 +1,13 @@
-import { Github, Linkedin, Instagram } from "lucide-react";
+import { GithubLogoIcon } from "@phosphor-icons/react/dist/csr/GithubLogo";
+import { InstagramLogoIcon } from "@phosphor-icons/react/dist/csr/InstagramLogo";
+import { LinkedinLogoIcon } from "@phosphor-icons/react/dist/csr/LinkedinLogo";
 
 import { useLanguage } from "../i18n/useLanguage";
 
 const socials = [
-  { icon: Github, href: "https://github.com/username", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/username", label: "LinkedIn" },
-  { icon: Instagram, href: "https://instagram.com/username", label: "Instagram" },
+  { icon: GithubLogoIcon, href: "https://github.com/username", label: "GitHub" },
+  { icon: LinkedinLogoIcon, href: "https://linkedin.com/in/username", label: "LinkedIn" },
+  { icon: InstagramLogoIcon, href: "https://instagram.com/username", label: "Instagram" },
 ];
 
 export default function Footer() {
@@ -32,26 +34,6 @@ export default function Footer() {
           <p className="font-mono text-sm text-[#6B7280] text-center">
             {footer.tagline} <span className="text-[#F0F0F0]/30">{footer.rights}</span>
           </p>
-
-          <div className="flex items-center gap-4">
-            {socials.map((social) => {
-              const SocialIcon = social.icon;
-
-              return (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                  className="text-[#6B7280] hover:text-primary transition-colors duration-200
-                    hover:scale-110 transform"
-                >
-                  <SocialIcon size={18} />
-                </a>
-              );
-            })}
-          </div>
         </div>
       </div>
     </footer>

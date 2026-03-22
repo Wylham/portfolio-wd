@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
-import { ExternalLink, Github, Code2 } from "lucide-react";
+import { ArrowSquareOutIcon } from "@phosphor-icons/react/dist/csr/ArrowSquareOut";
+import { CodeBlockIcon } from "@phosphor-icons/react/dist/csr/CodeBlock";
+import { GithubLogoIcon } from "@phosphor-icons/react/dist/csr/GithubLogo";
 
 import { useLanguage } from "../i18n/useLanguage";
 
@@ -56,8 +58,9 @@ export default function Projects() {
                     background: "radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.2) 0%, transparent 70%)",
                   }}
                 />
-                <Code2
+                <CodeBlockIcon
                   size={40}
+                  weight="duotone"
                   className="text-[#6B7280] group-hover:text-[#F0F0F0] transition-colors duration-300
                     group-hover:scale-110 transform"
                 />
@@ -91,7 +94,7 @@ export default function Projects() {
                       className="flex items-center gap-1.5 font-mono text-xs text-primary
                         hover:text-primary-glow transition-colors"
                     >
-                      <ExternalLink size={13} />
+                      <ArrowSquareOutIcon size={13} weight="bold" />
                       {projects.demoLabel}
                     </a>
                   )}
@@ -102,7 +105,7 @@ export default function Projects() {
                     className="flex items-center gap-1.5 font-mono text-xs text-[#6B7280]
                       hover:text-[#F0F0F0] transition-colors"
                   >
-                    <Github size={13} />
+                    <GithubLogoIcon size={13} weight="fill" />
                     GitHub
                   </a>
                 </div>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ListIcon } from "@phosphor-icons/react/dist/csr/List";
+import { XIcon } from "@phosphor-icons/react/dist/csr/X";
 
 import LanguageToggle from "./LanguageToggle";
 import { useLanguage } from "../i18n/useLanguage";
@@ -93,7 +94,7 @@ export default function Navbar() {
           className="md:hidden text-[#6B7280] hover:text-[#F0F0F0] transition-colors"
           aria-label={menuOpen ? t.nav.closeMenuLabel : t.nav.openMenuLabel}
         >
-          {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          {menuOpen ? <XIcon size={22} weight="bold" /> : <ListIcon size={22} weight="bold" />}
         </button>
       </nav>
 
