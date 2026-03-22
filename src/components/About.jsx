@@ -30,17 +30,17 @@ export default function About() {
   return (
     <section id="sobre" ref={sectionRef} className="py-24 md:py-32 bg-black">
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-24">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
-          <div className="lg:col-span-6 reveal relative flex flex-col justify-end w-full h-full min-h-[400px] lg:min-h-[700px] rounded-2xl overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10" />
+        <div className="grid items-stretch gap-6 sm:gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-6 reveal relative flex h-full min-h-[500px] w-full flex-col justify-end overflow-hidden rounded-2xl bg-[#050505] shadow-2xl sm:min-h-[560px] lg:min-h-[700px]">
+            <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
             <img
               src={profilePic}
               alt={about.imageAlt}
-              className="absolute inset-0 w-full h-full object-cover object-top scale-[1.15]"
+              className="absolute inset-x-0 -bottom-px h-[calc(100%+1px)] w-full object-contain object-bottom scale-[1.14] sm:scale-100 sm:object-cover sm:object-[center_30%] lg:object-top lg:scale-[1.08]"
             />
           </div>
 
-          <div className="lg:col-span-6 flex flex-col justify-center gap-8 py-8 lg:py-16">
+          <div className="lg:col-span-6 flex flex-col justify-center gap-6 pt-1 sm:gap-8 sm:pt-4 lg:gap-8 lg:py-16">
             <div className="reveal">
               <span className="font-mono text-sm text-primary">{about.sectionNumber}</span>
               <h2 className="font-display font-bold text-4xl md:text-5xl text-[#F0F0F0] mt-1 tracking-tight">

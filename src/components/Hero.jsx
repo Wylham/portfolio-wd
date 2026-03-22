@@ -12,6 +12,40 @@ const techStack = [
   { name: "AWS", src: "/logos/awsicon.svg" },
 ];
 
+function HeroCodeCard({ hero, compact = false, className = "" }) {
+  return (
+    <div
+      className={`relative overflow-hidden rounded-xl border bg-dark-card transition-colors duration-300 hover:border-white/20 ${className}`}
+      style={{ borderColor: "rgba(255,255,255,0.07)" }}
+    >
+      <div
+        className={`flex items-center gap-2 border-b bg-dark-elevated ${compact ? "px-3 py-2.5" : "px-4 py-3"}`}
+        style={{ borderColor: "rgba(255,255,255,0.07)" }}
+      >
+        <span className="h-3 w-3 rounded-full bg-[#FF5F57]" />
+        <span className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
+        <span className="h-3 w-3 rounded-full bg-[#28C840]" />
+        <span className="ml-3 font-mono text-xs text-[#6B7280]">{hero.codeFile}</span>
+      </div>
+
+      <div className={`font-mono ${compact ? "p-4 text-[13px] leading-6" : "p-5 text-sm leading-7"}`}>
+        {hero.codeLines.map((line, i) => (
+          <div key={i} className={line.color || "h-4"}>
+            {line.text && (
+              <>
+                <span className={`select-none text-[#6B7280] opacity-40 ${compact ? "mr-3 text-[11px]" : "mr-4 text-xs"}`}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className={line.color}>{line.text}</span>
+              </>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Hero() {
   const { t } = useLanguage();
   const { hero } = t;
@@ -25,7 +59,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black-card">
+    <section className="relative flex min-h-[100svh] items-start overflow-hidden bg-black-card lg:items-center">
       <div
         className="absolute top-0 right-0 w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] pointer-events-none"
         style={{
@@ -33,9 +67,9 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-6xl mx-auto w-full px-6 md:px-12 lg:px-24 pt-24 pb-16">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="flex flex-col gap-7">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-14 pt-24 sm:pb-16 md:px-12 lg:px-24 lg:py-16">
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+          <div className="flex flex-col items-center gap-5 text-center sm:gap-6 lg:items-start lg:gap-7 lg:text-left">
             <div
               className="inline-flex w-fit max-w-full items-center gap-2 px-3 py-1.5 rounded-lg
               bg-dark-elevated border border-white/10 overflow-hidden"
@@ -50,38 +84,43 @@ export default function Hero() {
                 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[64px] leading-tight
                 text-[#F0F0F0] tracking-tight"
               >
-                Wylham
-                <br />
+                <span className="inline sm:block">Wylham </span>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-glow">
                   Lima
                 </span>
               </h1>
             </div>
 
-            <p className="font-body text-[#6B7280] text-lg leading-relaxed max-w-md">
+            <div className="w-full max-w-[340px] lg:hidden">
+              <HeroCodeCard hero={hero} compact className="max-w-[340px]" />
+            </div>
+
+            <p className="max-w-md font-body text-base leading-relaxed text-[#6B7280] sm:text-lg">
               {hero.subtitlePrefix}
               <span className="text-[#F0F0F0]">{hero.subtitleHighlight}</span>
             </p>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="grid w-full max-w-md grid-cols-2 gap-3">
               <button
                 onClick={scrollToProjects}
-                className="px-6 py-3 bg-primary hover:bg-primary-hover font-body font-medium text-white
-                  rounded-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+                className="flex min-h-[52px] w-full items-center justify-center rounded-lg bg-primary px-5 py-3
+                  text-center font-body font-medium text-white transition-all duration-200
+                  hover:-translate-y-0.5 hover:bg-primary-hover hover:shadow-lg"
               >
                 {hero.primaryCta}
               </button>
               <a
                 href="/cv.pdf"
                 download
-                className="px-6 py-3 border border-white/20 hover:border-white/40 font-body font-medium
-                  text-[#F0F0F0] rounded-lg transition-all duration-200 hover:bg-white/5"
+                className="flex min-h-[52px] w-full items-center justify-center rounded-lg border border-white/20
+                  px-5 py-3 text-center font-body font-medium text-[#F0F0F0] transition-all duration-200
+                  hover:border-white/40 hover:bg-white/5"
               >
                 {hero.secondaryCta}
               </a>
             </div>
 
-            <div className="flex flex-wrap items-center gap-5 pt-2">
+            <div className="flex max-w-md flex-wrap items-center justify-center gap-x-4 gap-y-3 pt-1 sm:gap-5 sm:pt-2 lg:justify-start">
               {techStack.map((tech) => (
                 <div key={tech.name} className="relative group">
                   <img
@@ -102,42 +141,25 @@ export default function Hero() {
                 </div>
               ))}
             </div>
+
+            <div className="mt-4 flex flex-col items-center gap-1 self-center pt-2 lg:hidden">
+              <span className="font-mono text-xs text-[#6B7280]">{hero.scrollLabel}</span>
+              <button
+                onClick={scrollToBottom}
+                className="text-[#6B7280] transition-colors hover:text-primary animate-bounce-slow"
+                aria-label={hero.scrollAria}
+              >
+                <CaretDownIcon size={20} weight="bold" />
+              </button>
+            </div>
           </div>
 
           <div className="relative hidden lg:block animate-float">
-            <div
-              className="relative bg-dark-card border rounded-xl overflow-hidden transition-colors duration-300 hover:border-white/20"
-              style={{ borderColor: "rgba(255,255,255,0.07)" }}
-            >
-              <div
-                className="flex items-center gap-2 px-4 py-3 bg-dark-elevated border-b"
-                style={{ borderColor: "rgba(255,255,255,0.07)" }}
-              >
-                <span className="w-3 h-3 rounded-full bg-[#FF5F57]" />
-                <span className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
-                <span className="w-3 h-3 rounded-full bg-[#28C840]" />
-                <span className="font-mono text-xs text-[#6B7280] ml-3">{hero.codeFile}</span>
-              </div>
-
-              <div className="p-5 font-mono text-sm leading-7">
-                {hero.codeLines.map((line, i) => (
-                  <div key={i} className={line.color || "h-4"}>
-                    {line.text && (
-                      <>
-                        <span className="text-[#6B7280] select-none mr-4 text-xs opacity-40">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                        <span className={line.color}>{line.text}</span>
-                      </>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
+            <HeroCodeCard hero={hero} />
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1">
+        <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-1 lg:flex">
           <span className="font-mono text-xs text-[#6B7280]">{hero.scrollLabel}</span>
           <button
             onClick={scrollToBottom}

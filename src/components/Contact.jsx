@@ -10,26 +10,26 @@ const contacts = [
   {
     label: "LinkedIn",
     icon: LinkedinLogoIcon,
-    href: "https://linkedin.com/in/username",
-    hint: "/in/username",
+    href: "https://linkedin.com/in/wylhamdev",
+    hint: "/in/wylhamdev",
   },
   {
     label: "GitHub",
     icon: GithubLogoIcon,
-    href: "https://github.com/username",
-    hint: "@username",
+    href: "https://github.com/wylham",
+    hint: "@Wylham",
   },
   {
     label: "Instagram",
     icon: InstagramLogoIcon,
-    href: "https://instagram.com/username",
-    hint: "@username",
+    href: "https://instagram.com/wylhamdev",
+    hint: "@wylhamdev",
   },
   {
     label: "WhatsApp",
     icon: WhatsappLogoIcon,
-    href: "https://wa.me/5500000000000",
-    hint: "+55 (00) 00000-0000",
+    href: "https://wa.me/64992880832",
+    hint: "+55 (64) 99288-0832",
   },
 ];
 

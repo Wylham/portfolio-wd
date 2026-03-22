@@ -1,14 +1,4 @@
-import { GithubLogoIcon } from "@phosphor-icons/react/dist/csr/GithubLogo";
-import { InstagramLogoIcon } from "@phosphor-icons/react/dist/csr/InstagramLogo";
-import { LinkedinLogoIcon } from "@phosphor-icons/react/dist/csr/LinkedinLogo";
-
 import { useLanguage } from "../i18n/useLanguage";
-
-const socials = [
-  { icon: GithubLogoIcon, href: "https://github.com/username", label: "GitHub" },
-  { icon: LinkedinLogoIcon, href: "https://linkedin.com/in/username", label: "LinkedIn" },
-  { icon: InstagramLogoIcon, href: "https://instagram.com/username", label: "Instagram" },
-];
 
 export default function Footer() {
   const { t } = useLanguage();
