@@ -1,10 +1,12 @@
 import { useEffect, useRef } from "react";
 import { MapPin } from "lucide-react";
 
+import profilePic from "../assets/foto.png";
+
 const stats = [
-  { value: "+3", label: "Anos de Experiência" },
-  { value: "+20", label: "Projetos Entregues" },
-  { value: "+10", label: "Clientes Atendidos" },
+  { value: "+1", label: "Ano de Experiência" },
+  { value: "+10", label: "Projetos Reais" },
+  { value: "+20", label: "Soluções em produção" },
 ];
 
 export default function About() {
@@ -29,50 +31,17 @@ export default function About() {
   }, []);
 
   return (
-    <section id="sobre" ref={sectionRef} className="py-24 md:py-32 bg-dark">
+    <section id="sobre" ref={sectionRef} className="py-24 md:py-32 bg-black">
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-24">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
           {/* ── Left — Avatar ── */}
-          <div className="reveal flex justify-center lg:justify-start pb-6 lg:pb-0">
-            <div className="relative">
-              {/* Outer glow ring */}
-              <div
-                className="absolute inset-0 rounded-xl"
-                style={{
-                  background: "radial-gradient(ellipse, rgba(37,99,235,0.18) 0%, transparent 70%)",
-                  filter: "blur(20px)",
-                  transform: "scale(1.15) rotate(-3deg)",
-                }}
-              />
-              {/* Avatar placeholder */}
-              <div
-                className="relative w-64 h-64 md:w-72 md:h-72 rounded-xl bg-dark-elevated
-                  border flex items-center justify-center overflow-hidden"
-                style={{
-                  borderColor: "rgba(37,99,235,0.35)",
-                  transform: "rotate(-2deg)",
-                }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
-                <div className="text-center pointer-events-none select-none">
-                  <div className="font-display font-bold text-6xl text-primary/30">WR</div>
-                  <p className="font-mono text-xs text-[#6B7280] mt-1">foto aqui</p>
-                </div>
-              </div>
-              {/* Badge flutuante */}
-              <div
-                className="absolute -bottom-4 right-0 flex items-center gap-2 px-3 py-2
-                  bg-dark-card border rounded-lg shadow-glow-blue-sm"
-                style={{ borderColor: "rgba(37,99,235,0.3)" }}
-              >
-                <MapPin size={14} className="text-primary flex-shrink-0" />
-                <span className="font-mono text-xs text-[#F0F0F0] whitespace-nowrap">Disponível remotamente</span>
-              </div>
-            </div>
+          <div className="reveal relative flex flex-col justify-end w-full h-full min-h-[400px] lg:min-h-[600px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent z-10" />
+            <img src={profilePic} alt="Wylham" className="absolute inset-0 w-full h-full object-cover object-top" />
           </div>
 
           {/* ── Right — Text ── */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col justify-center gap-8 py-8 lg:py-16">
             <div className="reveal">
               <span className="font-mono text-sm text-primary">01.</span>
               <h2 className="font-display font-bold text-4xl md:text-5xl text-[#F0F0F0] mt-1 tracking-tight">
@@ -82,31 +51,17 @@ export default function About() {
 
             <div className="reveal flex flex-col gap-4">
               <p className="font-body text-[#6B7280] leading-relaxed">
-                Sou desenvolvedor fullstack com mais de 3 anos de experiência construindo produtos digitais do zero —
-                desde o design de banco de dados até a última interação do usuário na tela.
+                Sou desenvolvedor full stack com experiência no desenvolvimento de aplicações web e soluções digitais
+                construídas para funcionar na prática. Ao longo da minha trajetória, participei de diferentes etapas da
+                criação e evolução de produtos em produção, desenvolvendo uma visão mais estratégica sobre estrutura,
+                usabilidade e resolução de problemas. Meu foco é criar experiências{" "}
+                <span className="text-[#F0F0F0]">claras, funcionais e bem construídas</span>, unindo técnica,
+                organização e propósito.
               </p>
-              <p className="font-body text-[#6B7280] leading-relaxed">
-                Me especializo em <span className="text-[#F0F0F0]">React, Node.js e TypeScript</span>, com forte foco em
-                performance, escalabilidade e experiência do usuário. Gosto de código limpo, arquitetura sólida e de
-                entregar antes do prazo.
-              </p>
-              <p className="font-body text-[#6B7280] leading-relaxed">
-                Minha abordagem é simples: entender o problema real antes de escrever a primeira linha de código. O
-                resto é engenharia.
-              </p>
-            </div>
-
-            {/* Availability tag */}
-            <div
-              className="reveal inline-flex w-fit items-center gap-2 px-3 py-1.5 rounded-lg
-              bg-primary/10 border border-primary/20"
-            >
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="font-mono text-sm text-primary">Aberto a oportunidades remotas</span>
             </div>
 
             {/* Stats */}
-            <div className="reveal flex flex-wrap gap-0 pt-2">
+            <div className="reveal flex flex-nowrap gap-0 pt-2">
               {stats.map((stat, i) => (
                 <div key={stat.label} className="flex items-center">
                   {i !== 0 && <div className="h-8 w-px bg-white/10 mx-5" />}
