@@ -37,7 +37,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-dark">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-black-card">
       {/* Background radial glow */}
       <div
         className="absolute top-0 right-0 w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] pointer-events-none"
@@ -182,12 +182,6 @@ export default function Hero() {
           </button>
         </div>
       </div>
-
-      {/* Separator line */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-px"
-        style={{ background: "linear-gradient(to right, transparent, rgba(37,99,235,0.3), transparent)" }}
-      />
     </section>
   );
 }

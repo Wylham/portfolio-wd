@@ -69,7 +69,7 @@ export default function Experience() {
   }, []);
 
   return (
-    <section id="experiencia" ref={sectionRef} className="py-24 md:py-32 bg-dark-card">
+    <section id="experiencia" ref={sectionRef} className="py-24 md:py-32 bg-black-card">
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-24">
         {/* Header */}
         <div className="reveal mb-16">

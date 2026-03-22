@@ -50,13 +50,13 @@ export default function Contact() {
   }, []);
 
   return (
-    <section id="contato" ref={sectionRef} className="py-24 md:py-32 bg-dark-card">
+    <section id="contato" ref={sectionRef} className="py-24 md:py-32 bg-black-card">
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-24">
         {/* Header */}
         <div className="reveal mb-4">
           <span className="font-mono text-sm text-primary">04.</span>
           <h2 className="font-display font-bold text-4xl md:text-5xl text-[#F0F0F0] mt-1 tracking-tight">
-            Vamos Conversar
+            Vamos Conversar ?
           </h2>
         </div>
 

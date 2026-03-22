@@ -33,15 +33,19 @@ export default function About() {
   return (
     <section id="sobre" ref={sectionRef} className="py-24 md:py-32 bg-black">
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-24">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
-          {/* ── Left — Avatar ── */}
-          <div className="reveal relative flex flex-col justify-end w-full h-full min-h-[400px] lg:min-h-[600px] rounded-2xl overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent z-10" />
-            <img src={profilePic} alt="Wylham" className="absolute inset-0 w-full h-full object-cover object-top" />
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
+          {/* ── Left — Avatar (Aumentado) ── */}
+          <div className="lg:col-span-6 reveal relative flex flex-col justify-end w-full h-full min-h-[400px] lg:min-h-[700px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10" />
+            <img
+              src={profilePic}
+              alt="Wylham"
+              className="absolute inset-0 w-full h-full object-cover object-top scale-[1.15]"
+            />
           </div>
 
           {/* ── Right — Text ── */}
-          <div className="flex flex-col justify-center gap-8 py-8 lg:py-16">
+          <div className="lg:col-span-6 flex flex-col justify-center gap-8 py-8 lg:py-16">
             <div className="reveal">
               <span className="font-mono text-sm text-primary">01.</span>
               <h2 className="font-display font-bold text-4xl md:text-5xl text-[#F0F0F0] mt-1 tracking-tight">
