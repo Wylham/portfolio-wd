@@ -2,47 +2,42 @@ import { useEffect, useRef } from "react";
 
 const experiences = [
   {
-    company: "NovaTech Solutions",
-    role: "Desenvolvedor Fullstack Sênior",
-    period: "Jan 2023 — Presente",
-    type: "Remoto",
+    company: "Onrota Tech",
+    role: "Desenvolvedor Full Stack",
+    period: "ago/2025 — atual",
+    type: "Rio Verde, GO, Brasil",
     bullets: [
-      "Liderou a migração de uma aplicação monolítica para microserviços, reduzindo o tempo de deploy em 60%.",
-      "Construiu APIs REST e GraphQL em Node.js consumidas por mais de 50 mil usuários ativos.",
-      "Implementou sistema de autenticação com OAuth2 e RBAC para plataforma SaaS B2B.",
-      "Mentorou 3 desenvolvedores júnior, conduzindo code reviews e pair programming semanais.",
+      "Contribuí para substituir um fluxo operacional fragmentado por uma experiência centralizada em uma única plataforma, reduzindo em cerca de 80% o tempo de consulta.",
+      "Atuei como Desenvolvedor Full Stack na evolução do OnRisk, plataforma de gestão de risco para transportes e logística com mais de 70 mil consultas.",
+      "Implementei e mantive API REST com Node.js, Express e Prisma, incluindo autenticação com JWT, autorização por perfil (RBAC), trilha de auditoria e integrações externas (CNH, CRLV, ANTT, Placa, Processos e Referências).",
+      "Estruturei o front-end com React e TypeScript (dashboards, filtros, paginação e componentes reutilizáveis), melhorando a consistência e a manutenção da aplicação.",
+      "Utilizei MongoDB Atlas e Redis (Upstash) para persistência e cache, com foco em tempo de resposta e estabilidade da plataforma.",
+      "Apoiei infraestrutura e deploy em VPS Ubuntu (Nginx, SSL, PM2 e GitHub Actions), fortalecendo a estabilidade do ambiente e a padronização das entregas.",
+      "Trabalhei com metodologias ágeis (Scrum e Kanban), utilizando Jira e Trello para organização de demandas, priorização e acompanhamento de entregas.",
     ],
   },
   {
-    company: "Ignite Digital",
-    role: "Desenvolvedor Frontend",
-    period: "Mar 2022 — Dez 2022",
-    type: "Híbrido · São Paulo",
+    company: "BRdata Tecnologia Ltda.",
+    role: "Analista de Suporte",
+    period: "abr/2025 — ago/2025",
+    type: "Rio Verde, GO, Brasil",
     bullets: [
-      "Desenvolveu interfaces em React com foco em performance e acessibilidade (WCAG 2.1).",
-      "Reduziu o bundle size em 40% através de lazy loading e code splitting.",
-      "Integrou design system próprio da empresa com Storybook e Figma tokens.",
+      "Atuei na sustentação do ERP da empresa, com foco em administração de servidores em nuvem, suporte técnico e continuidade operacional.",
+      "Administrei servidores em nuvem, realizando monitoramento e alertas dos provedores com Prometheus para apoiar disponibilidade, estabilidade e performance do sistema.",
+      "Realizei suporte N1/N2 com diagnóstico e tratamento de incidentes, análise de logs e validação de rotinas e cadastros.",
+      "Apoiei troubleshooting e investigação de inconsistências com Microsoft SQL Server, realizando consultas e validações em banco de dados.",
+      "Contribuí para a continuidade operacional do ambiente por meio da resolução de problemas técnicos e suporte às rotinas críticas do sistema.",
     ],
   },
   {
-    company: "Freelance",
-    role: "Desenvolvedor Web",
-    period: "Jun 2021 — Mar 2022",
-    type: "Remoto",
+    company: "Centro Universitário Unibras",
+    role: "Analista de T.I.",
+    period: "mai/2024 — abr/2025",
+    type: "Rio Verde, GO, Brasil",
     bullets: [
-      "Desenvolveu e entregou mais de 8 projetos para clientes do Brasil e Europa.",
-      "Stack principal: React, Next.js, Node.js, MongoDB e Tailwind CSS.",
-      "Gerenciou comunicação direta com stakeholders, levantamento de requisitos e prazos.",
-    ],
-  },
-  {
-    company: "CodeLab Academy",
-    role: "Estagiário de Desenvolvimento",
-    period: "Jan 2021 — Jun 2021",
-    type: "Presencial · Belo Horizonte",
-    bullets: [
-      "Contribuiu para plataforma de ensino online com React e Firebase.",
-      "Implementou funcionalidades de gamificação e sistema de progresso de cursos.",
+      "Gestão e manutenção da infraestrutura de TI e suporte técnico a usuários.",
+      "Monitoramento de rede e administração de equipamentos (roteadores, switches e firewalls).",
+      "Rotinas de backup e apoio na implantação de sistemas, garantindo continuidade operacional.",
     ],
   },
 ];
@@ -96,13 +91,13 @@ export default function Experience() {
                 <div
                   className="absolute left-[-5px] top-5 hidden md:block w-[10px] h-[10px]
                     rounded-full bg-primary border-2 border-dark-card z-10
-                    group-hover:shadow-glow-blue-sm transition-shadow duration-300"
+                    group-hover:scale-125 transition-transform duration-300"
                 />
 
                 {/* Card */}
                 <div
                   className="p-6 bg-dark-elevated rounded-xl border transition-all duration-300
-                    group-hover:border-primary/30 group-hover:shadow-glow-blue-sm
+                    hover:border-white/10 hover:bg-white/[0.02]
                     group-hover:translate-x-1"
                   style={{ borderColor: "rgba(255,255,255,0.07)" }}
                 >

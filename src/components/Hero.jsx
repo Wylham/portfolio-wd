@@ -7,8 +7,6 @@ const techStack = [
   { name: "Tailwind CSS", src: "/logos/tailwind-svgrepo-com.svg" },
   { name: "PostgreSQL", src: "/logos/postgresql-svgrepo-com.svg" },
   { name: "MongoDB", src: "/logos/mongodb-svgrepo-com.svg" },
-  { name: "Express", src: "/logos/express-svgrepo-com.svg" },
-  { name: "Redis", src: "/logos/redis-svgrepo-com.svg" },
   { name: "AWS", src: "/logos/awsicon.svg" },
 ];
 
@@ -53,7 +51,7 @@ export default function Hero() {
             {/* Badge */}
             <div
               className="inline-flex w-fit max-w-full items-center gap-2 px-3 py-1.5 rounded-lg
-              bg-dark-elevated border border-primary/30 overflow-hidden"
+              bg-dark-elevated border border-white/10 overflow-hidden"
             >
               <span className="typing-text font-mono text-xs sm:text-sm text-primary whitespace-nowrap">
                 &lt; Fullstack Developer /&gt;
@@ -85,7 +83,7 @@ export default function Hero() {
               <button
                 onClick={scrollToProjects}
                 className="px-6 py-3 bg-primary hover:bg-primary-hover font-body font-medium text-white
-                  rounded-lg transition-all duration-200 shadow-glow-blue-sm hover:shadow-glow-blue"
+                  rounded-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
               >
                 Ver Projetos
               </button>
@@ -125,20 +123,10 @@ export default function Hero() {
           </div>
 
           {/* ── Right Column — Code Card ── */}
-          <div className="relative hidden lg:block">
-            {/* Glow behind card */}
+          <div className="relative hidden lg:block animate-float">
             <div
-              className="absolute inset-0 rounded-xl pointer-events-none"
-              style={{
-                background: "radial-gradient(ellipse at 50% 50%, rgba(37,99,235,0.12) 0%, transparent 70%)",
-                filter: "blur(40px)",
-                transform: "scale(1.1)",
-              }}
-            />
-
-            <div
-              className="relative bg-dark-card border rounded-xl overflow-hidden glow-pulse"
-              style={{ borderColor: "rgba(37,99,235,0.2)" }}
+              className="relative bg-dark-card border rounded-xl overflow-hidden transition-colors duration-300 hover:border-white/20"
+              style={{ borderColor: "rgba(255,255,255,0.07)" }}
             >
               {/* Window header */}
               <div

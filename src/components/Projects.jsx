@@ -72,7 +72,7 @@ export default function Projects() {
             <div
               key={i}
               className="reveal group relative bg-dark-card border rounded-xl overflow-hidden
-                transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-blue
+                transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.02]
                 flex flex-col"
               style={{ borderColor: "rgba(255,255,255,0.07)" }}
             >
@@ -82,21 +82,15 @@ export default function Projects() {
                   overflow-hidden transition-all duration-300"
               >
                 <div
-                  className="absolute inset-0 opacity-30 transition-opacity duration-300 group-hover:opacity-50"
+                  className="absolute inset-0 opacity-10 transition-opacity duration-300"
                   style={{
-                    background: `radial-gradient(ellipse at 50% 50%, rgba(37,99,235,0.3) 0%, transparent 70%)`,
+                    background: `radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.2) 0%, transparent 70%)`,
                   }}
                 />
                 <Code2
                   size={40}
-                  className="text-primary/30 group-hover:text-primary/50 transition-colors duration-300
+                  className="text-[#6B7280] group-hover:text-[#F0F0F0] transition-colors duration-300
                     group-hover:scale-110 transform"
-                />
-                {/* Hover border accent */}
-                <div
-                  className="absolute inset-0 border rounded-t-xl opacity-0 group-hover:opacity-100
-                    transition-opacity duration-300"
-                  style={{ borderColor: "rgba(37,99,235,0.3)" }}
                 />
               </div>
 

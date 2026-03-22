@@ -23,24 +23,19 @@ export default {
                 body: ['Inter', 'sans-serif'],
                 mono: ['"JetBrains Mono"', 'monospace'],
             },
-            boxShadow: {
-                'glow-blue': '0 0 40px rgba(37, 99, 235, 0.15)',
-                'glow-blue-sm': '0 0 20px rgba(37, 99, 235, 0.1)',
-                'glow-blue-md': '0 0 30px rgba(37, 99, 235, 0.2)',
-            },
             animation: {
                 'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
                 'pulse-slow': 'pulse 3s ease-in-out infinite',
-                'bounce-slow': 'bounceSlow 2s ease-in-out infinite',
+                'float': 'float 6s ease-in-out infinite',
             },
             keyframes: {
                 fadeInUp: {
                     '0%': { opacity: '0', transform: 'translateY(20px)' },
                     '100%': { opacity: '1', transform: 'translateY(0)' },
                 },
-                bounceSlow: {
+                float: {
                     '0%, 100%': { transform: 'translateY(0)' },
-                    '50%': { transform: 'translateY(8px)' },
+                    '50%': { transform: 'translateY(-12px)' },
                 },
             },
         },

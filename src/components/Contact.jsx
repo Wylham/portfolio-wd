@@ -75,18 +75,18 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="reveal group flex flex-col items-center gap-3 p-4 sm:p-6 md:p-8
                 bg-dark-elevated border rounded-xl transition-all duration-300
-                hover:border-primary/40 hover:shadow-glow-blue hover:-translate-y-1"
+                hover:border-white/20 hover:bg-white/[0.02] hover:-translate-y-1"
               style={{ borderColor: "rgba(255,255,255,0.07)" }}
             >
               {/* Icon container */}
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center
                   bg-dark-card border transition-all duration-300
-                  group-hover:bg-primary/10 group-hover:border-primary/30
+                  group-hover:bg-white/5 group-hover:border-white/10
                   group-hover:scale-110"
                 style={{ borderColor: "rgba(255,255,255,0.07)" }}
               >
-                <Icon size={22} className="text-[#6B7280] group-hover:text-primary transition-colors duration-300" />
+                <Icon size={22} className="text-[#6B7280] group-hover:text-[#F0F0F0] transition-colors duration-300" />
               </div>
 
               {/* Label + hint */}
