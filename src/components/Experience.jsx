@@ -59,25 +59,47 @@ export default function Experience() {
                     group-hover:translate-x-1"
                   style={{ borderColor: "rgba(255,255,255,0.07)" }}
                 >
-                  <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
-                    <div>
-                      <h3 className="font-display font-semibold text-lg text-[#F0F0F0]">{item.role}</h3>
-                      <p className="font-body text-primary text-sm mt-0.5">{item.company}</p>
-                    </div>
-                    <div className="flex flex-col items-end gap-1">
-                      <span className="font-mono text-xs text-[#6B7280]">{item.period}</span>
-                      <span className="font-mono text-xs text-[#6B7280] opacity-60">{item.location}</span>
-                    </div>
+                  <div className="flex flex-wrap items-start justify-between gap-3 mb-1">
+                    <h3 className="font-display font-semibold text-lg text-[#F0F0F0]">{item.company}</h3>
+                    {item.current && (
+                      <span
+                        className="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-md
+                          bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                      >
+                        {experience.currentLabel}
+                      </span>
+                    )}
                   </div>
 
-                  <ul className="flex flex-col gap-2">
+                  <p className="font-mono text-sm text-[#F0F0F0]/80">{item.role}</p>
+                  <p className="font-mono text-xs text-[#6B7280] mt-0.5 mb-4">
+                    {item.period}
+                    <span className="opacity-50"> · {item.location}</span>
+                  </p>
+
+                  <ul className="flex flex-col gap-2 mb-4">
                     {item.bullets.map((bullet) => (
                       <li key={bullet} className="flex items-start gap-3">
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/50 flex-shrink-0" />
-                        <span className="font-body text-sm text-[#6B7280] leading-relaxed">{bullet}</span>
+                        <span className="mt-2 w-3 h-px bg-[#6B7280]/40 flex-shrink-0" />
+                        <span className="font-body text-sm text-[#9CA3AF] leading-relaxed">{bullet}</span>
                       </li>
                     ))}
                   </ul>
+
+                  {item.stack && item.stack.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                      {item.stack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="font-mono text-xs px-2 py-1 bg-dark-card rounded-md
+                            text-[#6B7280] border"
+                          style={{ borderColor: "rgba(255,255,255,0.07)" }}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
