@@ -66,7 +66,7 @@ export const translations = {
                     location: "Rio Verde, GO",
                     current: true,
                     bullets: [
-                        "Reduzi em ~80% o tempo de consulta do OnRisk (125K+ consultas) ao centralizar um fluxo operacional fragmentado em uma única plataforma.",
+                        "Desenvolvi do zero o OnRisk, plataforma de gestão de risco para transportes e logística que substituiu um fluxo operacional fragmentado e reduziu em ~80% o tempo de consulta (125K+ consultas).",
                         "Construí API REST com Node.js, Express e Prisma, com autenticação via Better Auth em cookies httpOnly, autorização granular por roles, memberships, permissions e clients, e trilha de auditoria.",
                         "Estruturei o front-end em React e TypeScript com dashboards, filtros e componentes reutilizáveis, padronizando a base da aplicação.",
                     ],
@@ -212,7 +212,7 @@ export const translations = {
                     location: "Rio Verde, GO",
                     current: true,
                     bullets: [
-                        "Cut OnRisk lookup time by ~80% (125K+ queries) by centralizing a fragmented operational flow into a single platform.",
+                        "Built OnRisk from scratch, a risk management platform for transportation and logistics that replaced a fragmented operational flow and cut lookup time by ~80% (125K+ queries).",
                         "Built a REST API with Node.js, Express, and Prisma, with authentication via Better Auth on httpOnly cookies, granular authorization across roles, memberships, permissions, and clients, and an audit trail.",
                         "Structured the React/TypeScript front end with dashboards, filters, and reusable components, standardizing the app foundation.",
                     ],
