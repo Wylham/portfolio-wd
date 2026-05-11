@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ListIcon } from "@phosphor-icons/react/dist/csr/List";
 import { XIcon } from "@phosphor-icons/react/dist/csr/X";
 
@@ -7,14 +8,22 @@ import { useLanguage } from "../i18n/useLanguage";
 
 export default function Navbar() {
   const { t } = useLanguage();
+  const location = useLocation();
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("");
   const navLinks = t.nav.links;
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 20);
+
+      if (!isHome) {
+        setActive("");
+        return;
+      }
 
       const sections = navLinks.map(({ href }) => href.replace("#", ""));
       for (const id of [...sections].reverse()) {
@@ -29,13 +38,25 @@ export default function Navbar() {
     onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, [navLinks]);
+  }, [navLinks, isHome]);
 
   const handleNav = (href) => {
     setMenuOpen(false);
     const id = href.replace("#", "");
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (isHome) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate(`/${href}`);
+    }
+  };
+
+  const handleLogo = (e) => {
+    if (isHome) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    setMenuOpen(false);
   };
 
   return (
@@ -44,16 +65,9 @@ export default function Navbar() {
         ${scrolled ? "bg-black/80 backdrop-blur-md shadow-[0_4px_24px_rgba(0,0,0,0.4)]" : "bg-transparent"}`}
     >
       <nav className="max-w-6xl mx-auto px-6 md:px-12 lg:px-24 h-16 flex items-center justify-between">
-        <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
-          className="flex items-center select-none"
-        >
+        <Link to="/" onClick={handleLogo} className="flex items-center select-none">
           <img src="/logos/LogoWhiteWDEV.webp" alt="WDEV Logo" className="h-6 w-auto" />
-        </a>
+        </Link>
 
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map(({ label, href }) => {

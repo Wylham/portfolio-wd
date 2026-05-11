@@ -1,9 +1,45 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { ArrowSquareOutIcon } from "@phosphor-icons/react/dist/csr/ArrowSquareOut";
 import { CodeBlockIcon } from "@phosphor-icons/react/dist/csr/CodeBlock";
 import { GithubLogoIcon } from "@phosphor-icons/react/dist/csr/GithubLogo";
+import { ArrowRightIcon } from "@phosphor-icons/react/dist/csr/ArrowRight";
 
 import { useLanguage } from "../i18n/useLanguage";
+
+function CardCover({ src, alt }) {
+  const [errored, setErrored] = useState(false);
+
+  return (
+    <div
+      className="relative h-44 bg-dark-elevated overflow-hidden transition-all duration-300
+        flex items-center justify-center"
+    >
+      <div
+        className="absolute inset-0 opacity-30 transition-opacity duration-300"
+        style={{
+          background:
+            "radial-gradient(ellipse at 30% 40%, rgba(37,99,235,0.18) 0%, transparent 60%), radial-gradient(ellipse at 80% 80%, rgba(37,99,235,0.08) 0%, transparent 50%)",
+        }}
+      />
+      <CodeBlockIcon
+        size={40}
+        weight="duotone"
+        className="text-[#6B7280] group-hover:text-[#F0F0F0] transition-colors duration-300
+          group-hover:scale-110 transform relative z-[1]"
+      />
+      {src && !errored && (
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          onError={() => setErrored(true)}
+          className="absolute inset-0 w-full h-full object-cover z-[2]"
+        />
+      )}
+    </div>
+  );
+}
 
 export default function Projects() {
   const { t } = useLanguage();
@@ -48,23 +84,7 @@ export default function Projects() {
                 flex flex-col"
               style={{ borderColor: "rgba(255,255,255,0.07)" }}
             >
-              <div
-                className="relative h-44 bg-dark-elevated flex items-center justify-center
-                  overflow-hidden transition-all duration-300"
-              >
-                <div
-                  className="absolute inset-0 opacity-10 transition-opacity duration-300"
-                  style={{
-                    background: "radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.2) 0%, transparent 70%)",
-                  }}
-                />
-                <CodeBlockIcon
-                  size={40}
-                  weight="duotone"
-                  className="text-[#6B7280] group-hover:text-[#F0F0F0] transition-colors duration-300
-                    group-hover:scale-110 transform"
-                />
-              </div>
+              <CardCover src={project.cover} alt={project.name} />
 
               <div className="flex flex-col flex-1 p-5 gap-3">
                 <h3 className="font-display font-semibold text-xl text-[#F0F0F0] tracking-tight">{project.name}</h3>
@@ -85,7 +105,17 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="flex gap-3 pt-1">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-1">
+                  {project.slug && project.details && (
+                    <Link
+                      to={`/projetos/${project.slug}`}
+                      className="flex items-center gap-1.5 font-mono text-xs text-primary
+                        hover:text-primary-glow transition-colors"
+                    >
+                      {projects.viewMoreLabel}
+                      <ArrowRightIcon size={13} weight="bold" />
+                    </Link>
+                  )}
                   {project.demo && (
                     <a
                       href={project.demo}
@@ -98,16 +128,18 @@ export default function Projects() {
                       {projects.demoLabel}
                     </a>
                   )}
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 font-mono text-xs text-[#6B7280]
-                      hover:text-[#F0F0F0] transition-colors"
-                  >
-                    <GithubLogoIcon size={13} weight="fill" />
-                    GitHub
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 font-mono text-xs text-[#6B7280]
+                        hover:text-[#F0F0F0] transition-colors"
+                    >
+                      <GithubLogoIcon size={13} weight="fill" />
+                      GitHub
+                    </a>
+                  )}
                 </div>
               </div>
 
